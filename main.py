@@ -20,7 +20,6 @@ class SpotifyUserKeyData(ndb.Model):
 
 
 # Helper functions
-
 # Borrow sean's example in s18
 def spotifyurlfetch(url, access_token, params=None):
     headers = {'Authorization': 'Bearer ' + access_token}
@@ -36,10 +35,12 @@ def spotifyurlfetch(url, access_token, params=None):
 # Handler Function
 
 # Pages for app
+#beginning page for the user. An introduction
 @app.route("/")
 def index():
     return render_template("index.html")
 
+#The analysis and output for page after user inputted in
 @app.route("/comparingOutput")
 def analysis():
     if 'user_id' in session:
@@ -53,12 +54,14 @@ def analysis():
         userTopArtist = "https://api.spotify.com/v1/me/top/artists"
         userTopTracks = "https://api.spotify.com/v1/me/top/tracks"
 
+        #grabs user data
         userprofile = json.loads(spotifyurlfetch('https://api.spotify.com/v1/me', user.access_token))
         artistUserResponse = json.loads(spotifyurlfetch(userTopArtist, user.access_token))
         userTopArtist = artistUserResponse['items']
         tracksUserResponse = json.loads(spotifyurlfetch(userTopTracks, user.access_token))
         userTopTracks = tracksUserResponse['items']
 
+        #grabs minh's data
         minhProfile = json.loads(spotifyurlfetch("https://api.spotify.com/v1/users/minh.dos", user.access_token))
         minhTopArtistsResponse = json.load(open("minhTopArtists.json", "r"))
         minhTopArtists = minhTopArtistsResponse['items']
@@ -66,7 +69,8 @@ def analysis():
         minhTopTracks = minhTopTracksResponse['items']
 
         #analysis
-        # get a list of names of artist and tracks for me and name {name: {popuarity: 34, genre: }, name:{}}
+        # {name: {popuarity: 34, genre: }, name:{}}
+        # storing artists into a dict
         minhArtistsDict = {}
         for artistInfo in minhTopArtists:
             if artistInfo['name'] not in minhArtistsDict:
@@ -84,10 +88,9 @@ def analysis():
                 userArtistsDict[artistInfo['name']]['artistlink'] = artistInfo['external_urls']['spotify']
 
 
-        # [song1, song2] or {title song: {artist_name: ariana, song_preview: some link}}
+        # storing tracks into dict {title song: {artist_name: ariana, song_preview: some link}}
         minhTracksDict = {}
         for tracksInfo in minhTopTracks:
-            # artist = tracksInfo['artists'][0]['name']
             if tracksInfo['name'] not in minhTracksDict:
                 minhTracksDict[tracksInfo['name']] = {}
                 if tracksInfo['preview_url'] is None:
@@ -104,21 +107,25 @@ def analysis():
                 else:
                     userTracksDict[tracksInfo['name']]['song_preview'] = tracksInfo['preview_url']
 
-        compatibilityOfArtists = 0  #15 artists
-        compatibilityOfTracks = 0  #20 tracks
+        #counter variables
+        compatibilityOfArtists = 0
+        compatibilityOfTracks = 0
 
+        #determining the total of songs for user
         totalSongsOfUser = 0
         if tracksUserResponse['total'] >= tracksUserResponse['limit']:
             totalSongsOfUser = tracksUserResponse['limit']
         elif tracksUserResponse['total'] < tracksUserResponse['limit']:
             totalSongsOfUser = tracksUserResponse['total']
 
+        # determining the total of artists for user
         totalArtistsOfUser = 0
         if artistUserResponse['total'] >= artistUserResponse['limit']:
             totalArtistsOfUser = artistUserResponse['limit']
         elif artistUserResponse['total'] < artistUserResponse['limit']:
             totalArtistsOfUser = artistUserResponse['total']
 
+        # determining the total of common artists and tracks that both minh and a user shared
         for artist in minhArtistsDict.keys():
             if artist in userArtistsDict.keys():
                 compatibilityOfArtists += 1
@@ -127,15 +134,10 @@ def analysis():
             if track in userTracksDict.keys():
                 compatibilityOfTracks += 1
 
-
+        # determining the percentages
         percentTracks = (compatibilityOfTracks / totalSongsOfUser) * 100.0
         percentArtist = (compatibilityOfArtists / totalArtistsOfUser) * 100.0
         avgCompatibilityPercent = (percentTracks + percentArtist) / 2
-
-        #creating a variable that determine percentage
-        #use a for loop to compare
-        # store result into that variable created and multiply by 100
-        #also store the images url
 
 
 
@@ -150,12 +152,12 @@ def analysis():
 # # Sorry that it might be looking similar, and I borrowed it from s18
 @app.route("/auth/login")
 def login_handler():
-    # yes login in
     argumentsSpotify = {}
     argumentsSpotify['client_id'] = CLIENT_ID
     verification_code = request.args.get("code")
 
     if verification_code:
+        #assuming user logged in correctly
         argumentsSpotify["client_secret"] = CLIENT_SECRET
         argumentsSpotify["grant_type"] = 'authorization_code'
         argumentsSpotify["code"] = verification_code
@@ -170,7 +172,7 @@ def login_handler():
         refresh_token = tokenresponse_dict["refresh_token"]
         userprofile = json.loads(spotifyurlfetch('https://api.spotify.com/v1/me', access_token))
 
-        # some user into storage
+        # some user info into storage
         userid = str(userprofile["id"])
         with client.context():
             someuser = SpotifyUserKeyData.query().filter(SpotifyUserKeyData.userid == userid).get()
@@ -199,7 +201,7 @@ def login_handler():
         return redirect(AuthUrl)
 
 
-# Log out in the next page
+# Log out and back to home page
 @app.route("/auth/logout")
 def logout_handler():
     session.pop('user_id')
