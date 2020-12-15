@@ -1,0 +1,235 @@
+{
+  "items": [
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/66CXWjxzNUsdJxJ2JdwvnR"
+      },
+      "followers": {
+        "href": null,
+        "total": 54194762
+      },
+      "genres": [
+        "pop",
+        "post-teen pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/66CXWjxzNUsdJxJ2JdwvnR",
+      "id": "66CXWjxzNUsdJxJ2JdwvnR",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/f8c793519d837ca2f920c561535fe62ef32e8e5b",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/610f278171ed793b0d6c771f2877e5d4fd533d38",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/03345cd15fe15956bbc204131ac1b45991b99bb6",
+          "width": 160
+        }
+      ],
+      "name": "Ariana Grande",
+      "popularity": 97,
+      "type": "artist",
+      "uri": "spotify:artist:66CXWjxzNUsdJxJ2JdwvnR"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/6dhfy4ByARPJdPtMyrUYJK"
+      },
+      "followers": {
+        "href": null,
+        "total": 183637
+      },
+      "genres": [
+        "k-indie",
+        "k-pop",
+        "korean pop"
+      ],
+      "href": "https://api.spotify.com/v1/artists/6dhfy4ByARPJdPtMyrUYJK",
+      "id": "6dhfy4ByARPJdPtMyrUYJK",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/60a211c487ae8ff4282d429772328cd6a74dbb2a",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/574694e1068fd5e009b6bf3e3251e8d9ccc9603c",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/631269dcf407b1e1a51530a159532288a76ebb60",
+          "width": 160
+        }
+      ],
+      "name": "Yerin Baek",
+      "popularity": 63,
+      "type": "artist",
+      "uri": "spotify:artist:6dhfy4ByARPJdPtMyrUYJK"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/7lXgbtBDcCRbfc5f8FhGUL"
+      },
+      "followers": {
+        "href": null,
+        "total": 194320
+      },
+      "genres": [
+        "k-indie",
+        "k-pop",
+        "k-rap",
+        "korean pop",
+        "korean r&b"
+      ],
+      "href": "https://api.spotify.com/v1/artists/7lXgbtBDcCRbfc5f8FhGUL",
+      "id": "7lXgbtBDcCRbfc5f8FhGUL",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/75a8beedb3696f683697718aeb3bbf80abb0cc2f",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/c66f2f192e9a571d2564e6d8b87a671d5620fd2c",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/0311ca8f1d707f37d2d1f70d3e1eee7e9e4b96e9",
+          "width": 160
+        }
+      ],
+      "name": "Hoody",
+      "popularity": 60,
+      "type": "artist",
+      "uri": "spotify:artist:7lXgbtBDcCRbfc5f8FhGUL"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/41MozSoPIsD1dJM0CLPjZF"
+      },
+      "followers": {
+        "href": null,
+        "total": 17288890
+      },
+      "genres": [
+        "k-pop",
+        "k-pop girl group"
+      ],
+      "href": "https://api.spotify.com/v1/artists/41MozSoPIsD1dJM0CLPjZF",
+      "id": "41MozSoPIsD1dJM0CLPjZF",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/8655f0fdf5f2d897af934be45f5a40fc7afa29cd",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/53f18c90a47468bb20eaabb57845551040e925c9",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/c1becfeeb0e111f9f1a2b21e82e6be1ac3bae625",
+          "width": 160
+        }
+      ],
+      "name": "BLACKPINK",
+      "popularity": 89,
+      "type": "artist",
+      "uri": "spotify:artist:41MozSoPIsD1dJM0CLPjZF"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/7tYKF4w9nC0nq9CsPZTHyP"
+      },
+      "followers": {
+        "href": null,
+        "total": 3979512
+      },
+      "genres": [
+        "dance pop",
+        "pop",
+        "pop rap",
+        "rap"
+      ],
+      "href": "https://api.spotify.com/v1/artists/7tYKF4w9nC0nq9CsPZTHyP",
+      "id": "7tYKF4w9nC0nq9CsPZTHyP",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/e1e46c441024525643a19402b3a12188de219420",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/5e23d0ad32a6f75db6b3666082d0a8e60132ddd9",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/92512e953dcac544a48dc9a3e331725ea65ccff2",
+          "width": 160
+        }
+      ],
+      "name": "SZA",
+      "popularity": 82,
+      "type": "artist",
+      "uri": "spotify:artist:7tYKF4w9nC0nq9CsPZTHyP"
+    },
+    {
+      "external_urls": {
+        "spotify": "https://open.spotify.com/artist/5ZS223C6JyBfXasXxrRqOk"
+      },
+      "followers": {
+        "href": null,
+        "total": 3940245
+      },
+      "genres": [
+        "alternative r&b",
+        "dance pop",
+        "pop",
+        "r&b",
+        "urban contemporary"
+      ],
+      "href": "https://api.spotify.com/v1/artists/5ZS223C6JyBfXasXxrRqOk",
+      "id": "5ZS223C6JyBfXasXxrRqOk",
+      "images": [
+        {
+          "height": 640,
+          "url": "https://i.scdn.co/image/f677fc21079ba4985debb4d1b3b4eb9cd7554ec8",
+          "width": 640
+        },
+        {
+          "height": 320,
+          "url": "https://i.scdn.co/image/2d920b2241a68619360076c47c13dfd10ff53c3a",
+          "width": 320
+        },
+        {
+          "height": 160,
+          "url": "https://i.scdn.co/image/e064abd2c12ab1d94bd58227d7106cc14928794d",
+          "width": 160
+        }
+      ],
+      "name": "Jhené Aiko",
+      "popularity": 82,
+      "type": "artist",
+      "uri": "spotify:artist:5ZS223C6JyBfXasXxrRqOk"
+    }
+  ],
+  "total": 6,
+  "limit": 20,
+  "offset": 0,
+  "href": "https://api.spotify.com/v1/me/top/artists",
+  "previous": null,
+  "next": null
+}

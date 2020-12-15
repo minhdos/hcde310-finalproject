@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Spotify Users Compatibility with Minh!</title>
+    <link rel="icon" type="image/png" href="../static/spotify-icon.png"/>
+    <link href="../static/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.typekit.net/vel7bpw.css">
+    <meta charset="UTF-8">
+</head>
+    <body style="background-color: #dee2ff;">
+        <main>
+            <div class="results">
+                <div class="minhData">
+                    <h3> Profile </h3>
+                    {% if minhProfile['images'][0]['url'] != None %}
+                    <img src="{{minhProfile['images'][0]['url']}}" alt="profile pic" style="border-radius: 50%;
+                    filter:drop-shadow(2px 2px 2px gray);">
+                    {% else %}
+                    <h3> uh oh! you don't have a profile pic :(</h3>
+                    {% endif %}
+                    <h5><b>{{minhProfile['display_name']}}</b><br></h5>
+                    <p>user: {{minhProfile['id']}}<br></p>
+                    <p>followers: {{minhProfile['followers']['total']}}<br></p>
+                    <p>link: <a href="{{minhProfile['external_urls']['spotify']}}" target="_blank">{{minhProfile['external_urls']['spotify']}}</a><br></p>
+                    <br>
+
+                    <h3> Top Artists </h3>
+                    {% for artist in minhArtistsDict %}
+                        <ul>
+                            <li><a href="{{minhArtistsDict[artist]['artistlink']}}" target="_blank">
+                                <img src="{{minhArtistsDict[artist]['images'][2]['url']}}" alt="artist picture"
+                                     width="{{userArtistsDict[artist]['images'][2]['width']}}"
+                                     height="{{userArtistsDict[artist]['images'][2]['height']}}"
+                                     style="border-radius: 50%;
+                                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                     {{artist}}</a></li>
+                        </ul>
+                    {% endfor %}
+                    <br>
+                    <h3> Top Tracks </h3>
+                    <p>If you want to hear a preview of the song, <br>just click on the title!</p>
+                    {% for track in minhTracksDict %}
+                        <ul>
+                            <li><a href="{{minhTracksDict[track]['song_preview']}}" target="_blank"> {{track}}</a></li>
+                        </ul>
+                    {% endfor %}
+                </div>
+
+                <div class="percentCompat">
+                    <p>Overall Compatibility: <b>{{avgCompatibilityPercent}}%</b></p>
+                    <p>Compatibility based on Tracks: <b>{{percentTracks}}% </b></p>
+                    <p>Compatibility based on Artists: <b>{{percentArtist}}%</b></p>
+
+                    {% if avgCompatibilityPercent == 100.0 %}
+                    <h5> WOW!!! it's like we are meant to be as friends!! <br>
+                        I knew there was something special about you. Let's hang out <3</h5>
+                    {% elif avgCompatibilityPercent >= 75.0 %}
+                    <h5> Wowowowo!!! It looks like this could be the start of something new :) <br>
+                        If you don't get this reference, I will be sad :'(</h5>
+                    {% elif avgCompatibilityPercent >= 50.0 %}
+                    <h5>This seems like we got some common music styles. We should talk more about it! <br>
+                        I love to get you know more. :)</h5>
+                    {% elif avgCompatibilityPercent >= 25.0 %}
+                    <h5>The fact we have something in common is amazingggggg like yassssss. Let's talk!</h5>
+                    {% else %}
+                    <h5>Dang. We barely got anything :( <br> Let's change that :)  </h5>
+                    {% endif %}
+
+                </div>
+
+                <div class="userData">
+                    <h3> Profile </h3>
+                    <img src="{{userProfile['images'][0]['url']}}" alt="profile pic" style="border-radius: 50%;
+                    filter:drop-shadow(2px 2px 2px gray);">
+                    <h5><b>{{userProfile['display_name']}}</b><br></h5>
+                    <p>user: {{userProfile['id']}}<br></p>
+                    <p>followers: {{userProfile['followers']['total']}}<br></p>
+                    <p>link: <a href="{{userProfile['external_urls']['spotify']}}" target="_blank">{{userProfile['external_urls']['spotify']}}</a><br></p>
+                    <br>
+                    <h3> Top Artists </h3>
+                    {% for artist in userArtistsDict %}
+                        <ul>
+                            <li><a href="{{userArtistsDict[artist]['artistlink']}}" target="_blank">
+                                <img src="{{userArtistsDict[artist]['images'][2]['url']}}" alt="artist picture"
+                                     width="{{userArtistsDict[artist]['images'][2]['width']}}"
+                                     height="{{userArtistsDict[artist]['images'][2]['height']}}"
+                                     style="border-radius: 50%;
+                                     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                     {{artist}}</a></li>
+                        </ul>
+                    {% endfor %}
+                    <br>
+                    <h3> Top Tracks </h3>
+                    <p>If you want to hear a preview of the song, <br> just click on the title!</p>
+                    {% for track in userTracksDict %}
+                        <ul>
+                            <li><a href="{{userTracksDict[track]['song_preview']}}" target="_blank"> {{track}} </a></li>
+                        </ul>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <div class="logOut">
+                <a href="/auth/logout">
+                    <button>Log Out!</button>
+                </a>
+            </div>
+        </main>
+    </body>
+</html>

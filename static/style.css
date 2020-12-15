@@ -1,0 +1,84 @@
+p {
+    font-family: Europa-Regular, Avenir, sans-serif;
+}
+
+h3 {
+    font-family: Europa-Regular, Avenir, sans-serif;
+}
+
+h5 {
+    font-family: Europa-Regular, Avenir, sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li:link {
+  text-decoration: none;
+}
+
+li:visited {
+  text-decoration: none;
+}
+
+li:hover {
+  text-decoration: underline;
+}
+
+li:active {
+  text-decoration: underline;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+li {
+    font-family: Europa-Regular, Avenir, sans-serif;
+}
+
+
+body {
+    font-family: Europa-Regular, Avenir, sans-serif;
+}
+
+h1 {
+    font-family: Europa-Bold, sans-serif;
+}
+
+.indexcontent {
+    margin: auto;
+    width: 50%;
+    padding: 180px;
+}
+
+.results {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.percentCompat {
+    padding-top: 450px;
+    text-align: center;
+}
+
+.logOut {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}
