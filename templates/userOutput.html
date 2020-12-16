@@ -72,8 +72,12 @@
 
                 <div class="userData">
                     <h3> Profile </h3>
+                    {% if minhProfile['images'][0]['url'] != None  %}
                     <img src="{{userProfile['images'][0]['url']}}" alt="profile pic" style="border-radius: 50%;
                     filter:drop-shadow(2px 2px 2px gray);">
+                    {% else %}
+                    <h3> uh oh! you don't have a profile pic :(</h3>
+                    {% endif %}
                     <h5><b>{{userProfile['display_name']}}</b><br></h5>
                     <p>user: {{userProfile['id']}}<br></p>
                     <p>followers: {{userProfile['followers']['total']}}<br></p>
