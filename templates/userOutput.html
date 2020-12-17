@@ -14,7 +14,7 @@
             <div class="results">
                 <div class="minhData">
                     <h3> Profile </h3>
-                    {% if minhProfile['images'][0]['url'] != None %}
+                    {% if minhProfile['images']|length != 0 %}
                     <img src="{{minhProfile['images'][0]['url']}}" alt="profile pic" style="border-radius: 50%;
                     filter:drop-shadow(2px 2px 2px gray);">
                     {% else %}
@@ -72,7 +72,7 @@
 
                 <div class="userData">
                     <h3> Profile </h3>
-                    {% if userProfile['images'][0]['url'] != None %}
+                    {% if userProfile['images']|length != 0 %}
                     <img src="{{userProfile['images'][0]['url']}}" alt="profile pic" style="border-radius: 50%;
                     filter:drop-shadow(2px 2px 2px gray);">
                     {% else %}
